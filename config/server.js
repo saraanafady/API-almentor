@@ -1,8 +1,13 @@
 const express = require("express");
 const connectDB = require("./db");
 const userRoutes = require("../routes/userRoute");
-const app = express();
+const userSubscriptionRoutes = require("../routes/userSubscriptionRoutes");
+const subscriptionRoutes = require("../routes/subscriptionRoutes");
+const paymentRoutes = require("../routes/PaymentRoutes");
+const enrollmentRoutes = require("../routes/EnrollmentRoutes");
 const cors = require("cors");
+
+const app = express();
 
 // Connect To LocalHost
 app.use(
@@ -16,9 +21,15 @@ app.use(
 app.use(express.json());
 
 connectDB().then(() => {
+  // Routes
   app.use("/api/users", userRoutes);
+  app.use("/api/userSubscriptions", userSubscriptionRoutes);
+  app.use("/api/subscriptions", subscriptionRoutes);
+  app.use("/api/payments", paymentRoutes);
+  app.use("/api/enrollments", enrollmentRoutes);
 
-  app.use((err, res) => {
+
+  app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).json({ message: "Something went wrong!" });
   });
