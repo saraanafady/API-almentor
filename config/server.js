@@ -4,6 +4,7 @@ const userRoutes = require("../routes/userRoute");
 const userSubscriptionRoutes = require("../routes/userSubscriptionRoutes");
 const subscriptionRoutes = require("../routes/subscriptionRoutes");
 const paymentRoutes = require("../routes/PaymentRoutes");
+const enrollmentRoutes = require("../routes/EnrollmentRoutes");
 const cors = require("cors");
 
 const app = express();
@@ -24,7 +25,9 @@ connectDB().then(() => {
   app.use("/api/users", userRoutes);
   app.use("/api/userSubscriptions", userSubscriptionRoutes);
   app.use("/api/subscriptions", subscriptionRoutes);
-  app.use("/api", paymentRoutes);
+  app.use("/api/payments", paymentRoutes);
+  app.use("/api/enrollments", enrollmentRoutes);
+
 
   app.use((err, req, res, next) => {
     console.error(err.stack);

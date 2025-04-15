@@ -6,7 +6,6 @@ exports.createPayment = async (req, res) => {
   try {
     const { userId, subscriptionName, amount, transactionId } = req.body;
 
-    // Validate input
     if (!userId || !subscriptionName || !amount || !transactionId) {
       return res.status(400).json({ message: "All fields are required" });
     }
