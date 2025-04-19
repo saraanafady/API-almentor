@@ -10,6 +10,7 @@ const lessonRoutes = require("../routes/Topics & Courses/lessonRoutes");
 const moduleRoutes = require("../routes/Topics & Courses/moduleRoutes");
 const topicRoutes = require("../routes/Topics & Courses/topicRoutes");
 const subtopicRoutes = require("../routes/Topics & Courses/subTopicsRoutes");
+const favoriteLessonRoutes = require("./routes/Topics & Courses/favoriteLessonRoutes");
 
 // Enrollment Routes
 const enrollmentRoutes = require("../routes/Subscription & Payment/enrollmentRoutes");
@@ -51,6 +52,7 @@ connectDB().then(() => {
   app.use("/api/programs", programRoutes);
   app.use("/api/program-courses", programCourseRoutes);
   app.use("/api/user-program-progress", userProgramProgressRoutes);
+  app.use("/api/favorite-lessons", favoriteLessonRoutes);
 
   app.use((err, req, res, next) => {
     console.error(err.stack);

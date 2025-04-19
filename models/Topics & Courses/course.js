@@ -38,10 +38,10 @@ const courseSchema = new mongoose.Schema(
       type: String,
       maxlength: 200,
     },
-    lessons: [
+    modules: [
       {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Lesson",
+        type: Schema.Types.ObjectId,
+        ref: "Module",
       },
     ],
     freeLessons: [
