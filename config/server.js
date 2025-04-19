@@ -1,5 +1,15 @@
 const express = require("express");
 const connectDB = require("./db");
+<<<<<<< HEAD
+const userRoutes = require("./routes/userRoute");
+const courseRoutes = require("./Routes/courseRoutes");
+const moduleRoutes = require("./Routes/moduleRoutes");
+const topicRoutes = require("./Routes/topicRoutes");
+const subTopicRoutes = require("./Routes/subTopicRoutes");
+const lessonRoutes = require("./Routes/lessonRoutes");
+const userRoutes = require("./Routes/userRoute");
+const app = express();
+=======
 // Users Routes
 const userRoutes = require("../routes/Users/userRoute");
 const instructorRoutes = require("../routes/Users/instructorRoutes");
@@ -21,6 +31,7 @@ const programRoutes = require("../routes/Programs/programRoutes");
 const programCourseRoutes = require("../routes/Programs/programCourseRoute");
 const userProgramProgressRoutes = require("../routes/Programs/userProgramProgressRoute");
 
+>>>>>>> 84d24ecd2fed05172da35753a37932db88a8ee9d
 const cors = require("cors");
 const app = express();
 
@@ -38,6 +49,14 @@ app.use(express.json());
 connectDB().then(() => {
   // Routes
   app.use("/api/users", userRoutes);
+<<<<<<< HEAD
+  app.use("/api/courses", courseRoutes);
+  app.use("/api/modules", moduleRoutes);
+  app.use("/api/topics", topicRoutes);
+  app.use("/api/subtopics", subTopicRoutes);
+  app.use("/api/lessons", lessonRoutes);
+
+=======
   app.use("/api/instructors", instructorRoutes);
   app.use("/api/courses", courseRoutes);
   app.use("/api/lessons", lessonRoutes);
@@ -51,6 +70,7 @@ connectDB().then(() => {
   app.use("/api/programs", programRoutes);
   app.use("/api/program-courses", programCourseRoutes);
   app.use("/api/user-program-progress", userProgramProgressRoutes);
+>>>>>>> 84d24ecd2fed05172da35753a37932db88a8ee9d
 
   app.use((err, req, res, next) => {
     console.error(err.stack);
