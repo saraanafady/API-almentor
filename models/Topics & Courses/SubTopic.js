@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+// const { Schema } = mongoose;
 const subtopicSchema = new mongoose.Schema(
   {
     name: {

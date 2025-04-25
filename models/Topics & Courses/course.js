@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+// const { Schema } = mongoose;
 const courseSchema = new mongoose.Schema(
   {
     // Core Fields
@@ -40,7 +42,7 @@ const courseSchema = new mongoose.Schema(
     },
     modules: [
       {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Module",
       },
     ],

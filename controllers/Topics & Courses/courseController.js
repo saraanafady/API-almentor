@@ -60,10 +60,37 @@ const deleteCourse = async (req, res) => {
   }
 };
 
+// Filter Courses by Topic
+const getCoursesByTopic = async (req, res) => {
+  try {
+    const { topicId } = req.params;
+    const courses = await Course.find({ topic: topicId }).populate("instructor");
+    
+    if (!courses || courses.length === 0) {
+      return res.status(404).json({ 
+        message: "No courses found for this topic",
+        success: false 
+      });
+    }
+    
+    res.status(200).json({
+      success: true,
+      count: courses.length,
+      data: courses
+    });
+  } catch (error) {
+    res.status(500).json({ 
+      message: error.message,
+      success: false 
+    });
+  }
+};
+
 module.exports = {
   createCourse,
   getAllCourses,
   getCourseById,
   updateCourse,
   deleteCourse,
+  getCoursesByTopic
 };

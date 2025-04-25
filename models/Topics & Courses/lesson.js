@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 const lessonSchema = new mongoose.Schema(
   {
     title: {
@@ -49,6 +51,11 @@ const lessonSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+
+lessonSchema.pre("remove", async function (next) {
+  await mongoose.model("Lesson").deleteMany({ module: this._id });
+  next();
+});
 
 lessonSchema.index({ module: 1, order: 1 });
 lessonSchema.index({ isPublished: 1 });
