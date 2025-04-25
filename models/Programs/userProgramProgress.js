@@ -41,8 +41,7 @@ const userProgramProgressSchema = new mongoose.Schema(
   }
 );
 
-userProgramProgressSchema.index({ user: 1, program: 1 }, { unique: true });
-userProgramProgressSchema.index({ status: 1 });
+
 
 userProgramProgressSchema.virtual("totalCourses").get(async function () {
   return await mongoose

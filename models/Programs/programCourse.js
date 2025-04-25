@@ -28,7 +28,6 @@ const programCourseSchema = new mongoose.Schema(
   }
 );
 
-programCourseSchema.index({ program: 1, order: 1 });
-programCourseSchema.index({ course: 1, program: 1 }, { unique: true });
+
 
 module.exports = mongoose.model("ProgramCourse", programCourseSchema);

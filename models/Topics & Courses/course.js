@@ -104,11 +104,6 @@ const courseSchema = new mongoose.Schema(
   }
 );
 
-courseSchema.index({ topic: 1 });
-courseSchema.index({ subtopic: 1 });
-courseSchema.index({ language: 1 });
-courseSchema.index({ level: 1 });
-courseSchema.index({ lastUpdated: -1 });
-courseSchema.index({ enrollmentCount: -1 });
+
 
 module.exports = mongoose.model("Course", courseSchema);

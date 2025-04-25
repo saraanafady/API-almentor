@@ -23,6 +23,5 @@ const favoriteLessonSchema = new mongoose.Schema({
 });
 
 // Prevent duplicate favorites
-favoriteLessonSchema.index({ userId: 1, lessonId: 1 }, { unique: true });
 
 module.exports = mongoose.model('FavoriteLesson', favoriteLessonSchema);

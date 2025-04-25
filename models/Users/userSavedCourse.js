@@ -18,6 +18,5 @@ const userSavedCourseSchema = new mongoose.Schema({
 });
 
 // Compound index to prevent duplicate saves
-userSavedCourseSchema.index({ userId: 1, courseId: 1 }, { unique: true });
 
 module.exports = mongoose.model('UserSavedCourse', userSavedCourseSchema);

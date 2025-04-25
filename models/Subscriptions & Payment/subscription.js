@@ -79,7 +79,6 @@ subscriptionSchema.virtual("pricePerMonth").get(function () {
 });
 
 // Indexes
-subscriptionSchema.index({ priority: 1 });
-subscriptionSchema.index({ "price.amount": 1 });
+
 
 module.exports = mongoose.model("Subscription", subscriptionSchema);

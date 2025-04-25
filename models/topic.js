@@ -47,7 +47,5 @@ const topicSchema = new mongoose.Schema(
   }
 );
 
-topicSchema.index({ slug: 1 });
-topicSchema.index({ order: 1 });
 
 module.exports = mongoose.model("Topic", topicSchema);

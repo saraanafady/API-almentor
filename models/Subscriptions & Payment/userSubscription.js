@@ -54,8 +54,6 @@ userSubscriptionSchema.virtual("isValid").get(function () {
   return this.status === "active" && new Date() <= this.endDate;
 });
 
-userSubscriptionSchema.index({ endDate: 1 });
-userSubscriptionSchema.index({ user: 1, status: 1 });
 
 userSubscriptionSchema.pre("save", function (next) {
   if (this.isModified("endDate") && new Date() > this.endDate) {

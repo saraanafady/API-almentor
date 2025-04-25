@@ -65,7 +65,6 @@ enrollmentSchema.virtual("hasAccess").get(function () {
     : false;
 });
 
-enrollmentSchema.index({ user: 1, status: 1 });
-enrollmentSchema.index({ course: 1, isFree: 1 });
+
 
 module.exports = mongoose.model("Enrollment", enrollmentSchema);

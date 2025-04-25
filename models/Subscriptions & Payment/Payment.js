@@ -44,7 +44,6 @@ const paymentSchema = new mongoose.Schema(
 );
 
 // Indexes for faster queries
-paymentSchema.index({ user: 1 });
-paymentSchema.index({ transactionId: 1 });
+
 
 module.exports = mongoose.model("Payment", paymentSchema);

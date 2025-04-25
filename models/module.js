@@ -60,5 +60,3 @@ moduleSchema.pre("remove", async function (next) {
   next();
 });
 
-moduleSchema.index({ course: 1, order: 1 });
-moduleSchema.index({ isPublished: 1 });

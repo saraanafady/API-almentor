@@ -49,6 +49,3 @@ const lessonSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
-
-lessonSchema.index({ module: 1, order: 1 });
-lessonSchema.index({ isPublished: 1 });

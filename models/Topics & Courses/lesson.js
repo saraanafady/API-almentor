@@ -56,6 +56,3 @@ lessonSchema.pre("remove", async function (next) {
   await mongoose.model("Lesson").deleteMany({ module: this._id });
   next();
 });
-
-lessonSchema.index({ module: 1, order: 1 });
-lessonSchema.index({ isPublished: 1 });
