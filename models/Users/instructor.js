@@ -59,9 +59,6 @@ const instructorSchema = mongoose.Schema(
 );
 
 // Indexes
-instructorSchema.index({ user: 1 }, { unique: true });
-instructorSchema.index({ expertiseAreas: 1 });
-instructorSchema.index({ approvalStatus: 1 });
 
 // Virtual Population (for easy user data access)
 instructorSchema.virtual("profile", {
