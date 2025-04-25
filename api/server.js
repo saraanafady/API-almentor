@@ -13,9 +13,9 @@ const subtopicRoutes = require("../routes/Topics & Courses/subTopicRoutes");
 const favoriteLessonRoutes = require("../routes/Topics & Courses/favoriteLessonRoutes");
 
 // Enrollment Routes
-// const enrollmentRoutes = require("../routes/Subscription & Payment/enrollmentRoutes");
+const enrollmentRoutes = require("../routes/Subscription & Payment/enrollmentRoutes");
 const paymentRoutes = require("../routes/Subscription & Payment/paymentRoutes");
-//const subscriptionPlanRoutes = require("../routes/Subscription & Payment/subscriptionPlanRoutes");
+// const subscriptionPlanRoutes = require("../routes/Subscription & Payment/subscriptionPlanRoutes");
 const userSubscriptionRoutes = require("../routes/Subscription & Payment/userSubscriptionRoutes");
 // Programs Routes
 const programRoutes = require("../routes/Programs/programRoute");
@@ -45,7 +45,7 @@ connectDB().then(() => {
   app.use("/api/modules", moduleRoutes);
   app.use("/api/topics", topicRoutes);
   app.use("/api/subtopics", subtopicRoutes);
-  // app.use("/api/enrollments", enrollmentRoutes);
+  app.use("/api/enrollments", enrollmentRoutes);
   app.use("/api/payments", paymentRoutes);
   // app.use("/api/subscription-plans", subscriptionPlanRoutes);
   app.use("/api/user-subscriptions", userSubscriptionRoutes);
